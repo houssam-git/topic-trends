@@ -1,0 +1,14 @@
+pandas
+numpy
+scikit-learn
+sentence-transformers
+bertopic
+umap-learn
+hdbscan
+gensim
+spacy
+pymannkendall
+kagglehub
+plotly
+matplotlib
+streamlit
