@@ -12,3 +12,4 @@ kagglehub
 plotly
 matplotlib
 streamlit
+pyarrow
