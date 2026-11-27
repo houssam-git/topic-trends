@@ -11,6 +11,11 @@ DATA_RAW  = f"{ROOT}/data/raw"
 DATA_PROC = f"{ROOT}/data/processed"
 OUTPUTS   = f"{ROOT}/outputs"
 
+# Rupture de collecte constatée dans les données (EDA, phase 1)
+
+BREAK_DATE = "2018-06-01"      # avant : ~2 000-2 900 docs/mois ; après : ~150
+STABLE_PERIOD = ("2012-01-01", "2018-05-31")   # pour l'analyse de sensibilité
+
 MIN_WORDS = 5                         # textes plus courts = trop peu informatifs
 
 def set_seed(seed: int = SEED):
