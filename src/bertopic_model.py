@@ -41,3 +41,9 @@ def topic_words(model, topn=25):
     """Top mots de chaque thème, sans le thème outlier -1."""
     return [[w for w, _ in model.get_topic(t)][:topn]
             for t in sorted(model.get_topics()) if t != -1]
+
+def restore_bigrams(topics, dictionary):
+    """BERTopic supprime les '_' (donald_trump -> donaldtrump) : on les restaure
+    via le dictionnaire LDA pour que les mots soient comparables (c_v)."""
+    mapping = {w.replace("_", ""): w for w in dictionary.token2id}
+    return [[mapping.get(w, w) for w in t if w != "emptydoc"] for t in topics]

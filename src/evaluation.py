@@ -1,4 +1,6 @@
 """Métriques communes LDA / BERTopic."""
+import numpy as np
+from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 from gensim.models.coherencemodel import CoherenceModel
 
 def coherence_cv(topics, texts, dictionary, topn=10):
@@ -14,8 +16,6 @@ def diversity(topics, topn=25):
     words = [w for t in topics for w in t[:topn]]
     return len(set(words)) / len(words)
 
-import numpy as np
-from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
 def external_scores(y_true, y_pred, ignore_outliers=True):
     """ARI / NMI par rapport aux catégories HuffPost (évaluation seulement, jamais d'entraînement)."""
